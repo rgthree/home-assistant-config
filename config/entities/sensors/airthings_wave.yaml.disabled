@@ -1,0 +1,12 @@
+---
+# Reads Airthings Wave. Installed through Hacs.
+# Unfortunately, BLE doesn't work through docker without
+# network "host" mode, which breaks traefik's networks flag
+# for the proxy.
+#
+# https://github.com/custom-components/sensor.airthings_wave
+#
+platform: airthings_wave
+mac: !secret airthings_mac
+name: 'Basement Airthings Wave'
+scan_interval: 300

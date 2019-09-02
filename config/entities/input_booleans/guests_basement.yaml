@@ -1,0 +1,7 @@
+---
+# Are guests staying in the basement?
+#
+guests_basement:
+  name: Guests are staying in the basement
+  initial: off
+  icon: mdi:hotel

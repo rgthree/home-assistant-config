@@ -1,0 +1,15 @@
+# Ignore everything in our config
+config/**
+
+# Except our whitelisted files.
+!config/configuration.yaml
+!config/secrets.fake.yaml
+!config/ui-lovelace.yaml
+!config/automations
+!config/automations/**
+!config/entities
+!config/entities/**
+!config/integrations
+!config/integrations/**
+!config/scripts
+!config/scripts/**

@@ -1,0 +1,8 @@
+---
+# Should we automate the living room lights?
+#
+# NOTE: Also used in AppDaemon.
+#
+automate_living_room_lights:
+  name: Automate Living Room Lights
+  icon: mdi:lightbulb-on-outline

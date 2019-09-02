@@ -1,0 +1,4 @@
+
+platform: switch
+name: basement_reading_lamp
+entity_id: switch.iselector_3004

@@ -1,0 +1,10 @@
+homeassistant:
+  # It seems, even if there's a single zone with the data, latitude & longitude
+  # are still needed here for the `sun` component to calculate the sunset &
+  # sun rise correctly.
+  latitude: !secret hass_latitude
+  longitude: !secret hass_longitude
+  time_zone: !secret hass_time_zone
+  unit_system: imperial
+  # The rest all come from ./integrations/*
+  packages: !include_dir_named integrations

@@ -1,0 +1,28 @@
+
+# https://www.home-assistant.io/components/google_assistant/#configuration
+# If changing entities then, when finished:
+#  1. Restart Home Assistant and:
+#  2. Open the Google Home app to: Settings > More Settings > Assistant > Home Control.
+#  3. Hit the + FAB and unlink the "[test] Home" app.
+#  4. In a browser, head to https://console.actions.google.com and select your app
+#  5. Open the "Simulator" on the left and start it (if not started)
+#  6. Add back the "[test] Home" app like in #3 (might have wait/back out/refresh)
+google_assistant:
+  project_id: !secret google_assistant_project_id
+  api_key: !secret google_assistant_api_key
+  expose_by_default: false
+  entity_config:
+    script.goodnight:
+      expose: true
+    light.living_room_lamps:
+      expose: true
+      room: Living Room
+    light.basement_table_lamp:
+      expose: true
+      room: Basement
+    light.basement_tv_led_strip:
+      expose: true
+      room: Basement
+    light.basement_reading_lamp:
+      expose: true
+      room: Basement

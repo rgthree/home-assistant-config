@@ -1,0 +1,7 @@
+
+platform: group
+name: living_room_lamps
+entities:
+  - light.rgbw_bulb_bookcase_right # was light.osram_lightify_a19_rgbw_00a40f0a_3
+  - light.rgbw_bulb_bookcase_left # was light.osram_lightify_a19_rgbw_00a40ce6_3
+  - light.rgbw_bulb_side_table # was light.osram_lightify_a19_rgbw_00a3f878_3

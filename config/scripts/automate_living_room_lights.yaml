@@ -1,0 +1,27 @@
+---
+# A bunch of scripts that toggle and take action for app daemon automation
+# of my living room lights.
+#
+turn_on_automate_living_room_lights:
+  sequence:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: input_boolean.automate_living_room_lights
+
+turn_off_automate_living_room_lights:
+  sequence:
+    - service: homeassistant.turn_off
+      data:
+        entity_id: input_boolean.automate_living_room_lights
+
+turn_on_living_room_lights:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.living_room_lamps
+
+turn_off_living_room_lights:
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id: light.living_room_lamps

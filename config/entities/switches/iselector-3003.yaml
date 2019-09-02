@@ -1,0 +1,11 @@
+---
+# https://www.home-assistant.io/components/switch.mqtt/
+# https://github.com/arendst/Sonoff-Tasmota/wiki/MQTT-Overview
+#
+platform: mqtt
+name: iselector-3003
+state_topic: "stat/iselector-3003/POWER"
+command_topic: "cmnd/iselector-3003/POWER"
+availability_topic: "tele/iselector-3003/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"

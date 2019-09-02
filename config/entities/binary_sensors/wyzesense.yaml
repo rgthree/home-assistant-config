@@ -1,0 +1,11 @@
+---
+# The Wyze Sense sensor.
+# Sets the device from the incoming docker container.
+#
+# TODO: Sometimes the device path changes if the parent system reboots.
+# Allowing this to be dynamic would be even more automated.
+#
+# https://github.com/kevinvincent/ha-wyzesense
+#
+platform: wyzesense
+device: "/dev/hidraw2"

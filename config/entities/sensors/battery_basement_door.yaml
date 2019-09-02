@@ -1,0 +1,8 @@
+
+platform: template
+sensors:
+  battery_basement_door:
+    friendly_name: 'Basement Door Sensor (CR1632)'
+    value_template: "{{ state_attr('binary_sensor.wyzesense_basement_door', 'battery_level') }}"
+    unit_of_measurement: '%'
+    device_class: battery

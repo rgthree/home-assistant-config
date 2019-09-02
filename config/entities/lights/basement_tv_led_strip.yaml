@@ -1,0 +1,4 @@
+
+platform: switch
+name: basement_tv_led_strip
+entity_id: switch.iselector_3002

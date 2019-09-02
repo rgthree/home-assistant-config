@@ -1,0 +1,11 @@
+---
+# https://www.home-assistant.io/components/switch.mqtt/
+# https://github.com/arendst/Sonoff-Tasmota/wiki/MQTT-Overview
+#
+platform: mqtt
+name: litsped-4001
+state_topic: "stat/litsped-4001/POWER"
+command_topic: "cmnd/litsped-4001/POWER"
+availability_topic: "tele/litsped-4001/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"

@@ -1,0 +1,8 @@
+---
+# 
+# https://www.home-assistant.io/components/zestimate/
+#
+platform: zestimate
+api_key: !secret zillow_zwsid
+zpid:
+- !secret zillow_zpid

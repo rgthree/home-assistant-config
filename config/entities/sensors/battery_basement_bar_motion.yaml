@@ -1,0 +1,7 @@
+platform: template
+sensors:
+  battery_basement_bar_motion:
+    friendly_name: 'Basement Bar Motion Sensor (CR2450)'
+    value_template: "{{ state_attr('binary_sensor.wyzesense_basement_bar_motion', 'battery_level') }}"
+    unit_of_measurement: '%'
+    device_class: battery

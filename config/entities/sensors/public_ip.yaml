@@ -1,0 +1,9 @@
+---
+# Outputs the public IP of Home Assistant.
+#
+# Uses: https://www.home-assistant.io/components/command_line/
+#
+platform: command_line
+name: Public IP
+scan_interval: 10800 # in seconds, 3 hours
+command: "curl https://ipinfo.io/ip"

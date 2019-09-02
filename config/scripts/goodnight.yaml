@@ -1,0 +1,26 @@
+---
+# Things to do when I go to bed.
+#
+goodnight:
+  alias: Goodnight
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id: light.living_room_lamps
+    # Only do basement if there aren't guests down there.
+    - condition: state
+      entity_id: input_boolean.guests_basement
+      state: 'off'
+    - service: homeassistant.turn_off
+      data:
+        entity_id: light.basement_reading_lamp
+    - service: homeassistant.turn_off
+      data:
+        entity_id: light.basement_tv_led_strip
+    - service: homeassistant.turn_off
+      data:
+        entity_id: light.basement_table_lamp
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.basement
+        operation_mode: 'eco'

@@ -1,0 +1,6 @@
+---
+# https://www.home-assistant.io/components/switch/
+#
+# However, most are mqtt: https://www.home-assistant.io/components/switch.mqtt/
+#
+switch: !include_dir_list ../entities/switches

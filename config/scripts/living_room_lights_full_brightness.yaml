@@ -1,0 +1,11 @@
+
+living_room_lights_full_brightness:
+  alias: Living Room Lights Full Brightness
+  sequence:
+    - service: light.turn_on
+      data_template:
+        entity_id: light.living_room_lamps
+        # Note: Max range of Sylvania RGB bulbs is 689 (redest) to 152 (coldest)
+        color_temp: 438
+        brightness: 255
+        transition: '2'

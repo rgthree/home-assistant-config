@@ -1,0 +1,308 @@
+# https://cdn.materialdesignicons.com/3.4.93/
+
+title: !secret lovelace_title
+
+resources:
+  - url: /community_plugin/weather-card/weather-card.js
+    type: module
+  - url: /local/custom-lovelace/mini-graph-card/mini-graph-card-bundle.js
+    type: module
+  - url: /local/custom-lovelace/bar-card.js?v=1.0.0
+    type: js
+  - url: /local/custom-lovelace/vertical-stack-in-card.js?v=0.1.2
+    type: js
+
+
+views:
+  - path: overview
+    title: Overview
+    # icon: mdi:home
+    cards:
+      - type: custom:weather-card
+        entity: weather.dark_sky
+        icons: "/local/custom-lovelace/weather-card/icons/"
+
+      - type: entities
+        title: Info
+        show_header_toggle: false
+        entities:
+          - entity: sun.sun
+            secondary_info: next_dawn
+          - entity: sensor.zestimate
+            name: Z-Range
+            icon: mdi:resistor
+            secondary_info: last-changed
+          - entity: sensor.redfin_estimate
+            name: R-Range
+            icon: mdi:resistor
+            secondary_info: last-changed
+
+      - type: entities
+        title: State
+        show_header_toggle: false
+        entities:
+          - entity: alarm_control_panel.home
+            secondary_info: last-changed
+            name: SimpliSafe
+            icon: mdi:alarm-bell
+          - entity: input_boolean.guests_basement
+
+      - type: entities
+        title: Scripts
+        show_header_toggle: false
+        entities:
+          - entity: script.goodnight
+
+  # ----------------------------------------------------------------------------
+  #   Main Floor
+  # ----------------------------------------------------------------------------
+  - path: main_floor
+    title: Main Floor
+    # icon: mdi:home
+    cards:
+      - type: entities
+        entities:
+          - entity: light.living_room_lamps
+            name: Living Room Lamps
+          - entity: input_boolean.automate_living_room_lights
+
+      - type: entities
+        title: Scripts
+        show_header_toggle: false
+        entities:
+          - entity: script.living_room_lamps_random_color
+            name: Random Colors on Lamps
+
+      - type: vertical-stack
+        cards:
+          - type: thermostat
+            entity: climate.master_bedroom
+
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                entities:
+                  - sensor.master_bedroom_thermostat_temperature
+                name: Temperature
+                height: 65
+                line_width: 2
+                font_size: 70
+                hours_to_show: 72
+                points_per_hour: 1
+                show:
+                  #extrema: true
+                  fill: true
+                  #graph: bar
+                color_thresholds:
+                  - value: 75
+                    color: "#ee5870"
+                  - value: 0
+                    # color: "#58a0ee"
+                    color: "#77d57c"
+
+              - type: custom:mini-graph-card
+                entities:
+                  - sensor.master_bedroom_thermostat_humidity
+                name: Humidity
+                height: 65
+                line_width: 2
+                font_size: 70
+                hours_to_show: 72
+                points_per_hour: 1
+                show:
+                  #extrema: true
+                  fill: true
+                  #graph: bar
+                color_thresholds:
+                  - value: 55
+                    color: "#ee5870"
+                  - value: 0
+                    # color: "#58a0ee"
+                    color: "#77d57c"
+
+
+  # ----------------------------------------------------------------------------
+  #   Basement
+  # ----------------------------------------------------------------------------
+  - path: basement
+    title: Basement
+    # icon: mdi:home
+    cards:
+      - type: entities
+        entities:
+          - entity: light.basement_table_lamp
+          - entity: light.basement_reading_lamp
+          - entity: light.basement_tv_led_strip
+          - entity: binary_sensor.wyzesense_basement_door
+          - entity: binary_sensor.wyzesense_basement_bar_motion
+
+      - type: entities
+        title: State
+        show_header_toggle: false
+        entities:
+          - entity: input_boolean.guests_basement
+
+      - type: vertical-stack
+        cards:
+          - type: thermostat
+            entity: climate.basement
+
+          - type: horizontal-stack
+            cards:
+            - type: custom:mini-graph-card
+              entities:
+                - sensor.basement_thermostat_temperature
+              name: Temperature
+              height: 65
+              line_width: 2
+              font_size: 70
+              hours_to_show: 72
+              points_per_hour: 1
+              show:
+                #extrema: true
+                fill: true
+                #graph: bar
+              color_thresholds:
+                - value: 78
+                  color: "#ee5870"
+                - value: 0
+                  # color: "#58a0ee"
+                  color: "#77d57c"
+
+            - type: custom:mini-graph-card
+              entities:
+                - sensor.basement_thermostat_humidity
+              name: Humidity
+              height: 65
+              line_width: 2
+              font_size: 70
+              hours_to_show: 72
+              points_per_hour: 1
+              show:
+                #extrema: true
+                fill: true
+                #graph: bar
+              color_thresholds:
+                - value: 55
+                  color: "#ee5870"
+                - value: 0
+                  # color: "#58a0ee"
+                  color: "#77d57c"
+
+
+
+  # ----------------------------------------------------------------------------
+  #   System
+  # ----------------------------------------------------------------------------
+  - path: system
+    title: System
+    cards:
+      - type: entities
+        title: System
+        show_header_toggle: false
+        entities:
+          - entity: sensor.disk_use_percent
+          - entity: sensor.disk_free
+          - entity: sensor.memory_use_percent
+          - entity: sensor.memory_free
+          - entity: sensor.last_boot
+          - entity: sensor.ssl_certificate_expiry
+      - type: entities
+        title: Batteries
+        show_header_toggle: false
+        entities:
+          - entity: sensor.battery_basement_door
+          - entity: sensor.battery_basement_bar_motion
+      - type: entities
+        title: Network
+        show_header_toggle: false
+        entities:
+          - entity: sensor.public_ip
+          # - entity: sensor.speedtest_download
+          #   secondary_info: last-changed
+          # - entity: sensor.speedtest_upload
+          #   secondary_info: last-changed
+          # - entity: sensor.speedtest_ping
+          #   secondary_info: last-changed
+
+          - type: custom:vertical-stack-in-card
+            cards:
+              - type: custom:mini-graph-card
+                name: Ping
+                entities:
+                  - sensor.speedtest_ping
+                height: 50
+                line_width: 2
+                font_size: 70
+                hours_to_show: 72
+                points_per_hour: 1
+                show:
+                  graph: bar
+                color_thresholds:
+                  - value: 20
+                    color: "#FF0000"
+                  - value: 0
+                    color: "#3498db"
+
+              - type: custom:mini-graph-card
+                name: Download
+                entities:
+                  - sensor.speedtest_download
+                height: 50
+                line_width: 2
+                font_size: 70
+                hours_to_show: 72
+                points_per_hour: 1
+                show:
+                  extrema: true
+                  fill: true
+                color_thresholds:
+                  - value: 0
+                    color: "#FFFF00"
+                  - value: 40
+                    color: "#3498db"
+
+              - type: custom:mini-graph-card
+                name: Upload
+                entities:
+                  - sensor.speedtest_upload
+                height: 50
+                line_width: 2
+                font_size: 70
+                hours_to_show: 72
+                points_per_hour: 1
+                show:
+                  extrema: true
+                  fill: true
+                color_thresholds:
+                  - value: 0
+                    color: "#FFFF00"
+                  - value: 13
+                    color: "#3498db"
+
+          - type: divider
+            style:
+              height: 1px
+              width: 80%
+              margin-left: auto
+              margin-right: auto
+              background: '#aaaaaa'
+          - entity: script.cycle_modem
+            icon: mdi:restart
+            secondary_info: last-changed
+
+  # ----------------------------------------------------------------------------
+  #   Automations
+  # ----------------------------------------------------------------------------
+  - path: automations
+    title: Automations
+    cards:
+      - type: entities
+        title: Automations
+        show_header_toggle: false
+        entities:
+          - group.all_automations
+
+
+
+

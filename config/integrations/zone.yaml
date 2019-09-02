@@ -1,0 +1,11 @@
+    
+---
+# Zones allow you to specify certain regions on earth (for now).
+#
+# https://www.home-assistant.io/components/zone/
+#
+zone:
+  - name: Home
+    latitude: !secret hass_latitude
+    longitude: !secret hass_longitude
+    radius: 50

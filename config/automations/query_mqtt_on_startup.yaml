@@ -1,0 +1,9 @@
+
+alias: Query MQTT on Startup
+trigger:
+  - platform: homeassistant
+    event: start
+action:
+  - service: mqtt.publish
+    data:
+      topic: "cmnd/sonoffs/POWER"

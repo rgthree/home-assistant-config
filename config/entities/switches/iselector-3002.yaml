@@ -1,0 +1,13 @@
+---
+# https://www.home-assistant.io/components/switch.mqtt/
+# https://github.com/arendst/Sonoff-Tasmota/wiki/MQTT-Overview
+#
+# Currently mapped to light.basement_tv_led_strip in ../lights
+#
+platform: mqtt
+name: iselector-3002
+state_topic: "stat/iselector-3002/POWER"
+command_topic: "cmnd/iselector-3002/POWER"
+availability_topic: "tele/iselector-3002/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"

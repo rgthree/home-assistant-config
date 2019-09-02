@@ -1,0 +1,14 @@
+---
+# Sometimes the modem gets stuck. This cycles the power using the local network.
+#
+cycle_modem:
+  alias: Cycle the modem's power
+  sequence:
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.modem
+    - delay:
+        seconds: 20
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.modem

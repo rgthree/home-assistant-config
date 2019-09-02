@@ -1,0 +1,13 @@
+---
+#
+# https://www.home-assistant.io/components/systemmonitor/
+#
+platform: systemmonitor
+resources:
+  - type: disk_use_percent
+    arg: /
+  - type: disk_free
+    arg: /
+  - type: memory_use_percent
+  - type: memory_free
+  - type: last_boot
