@@ -1,0 +1,4 @@
+
+platform: switch
+name: basement_stairs_led_strip
+entity_id: switch.litsped_4004

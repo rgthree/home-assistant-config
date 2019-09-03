@@ -20,7 +20,7 @@ goodnight:
     - service: homeassistant.turn_off
       data:
         entity_id: light.basement_table_lamp
-    - service: climate.set_operation_mode
+    - service: climate.set_preset_mode
       data:
         entity_id: climate.basement
-        operation_mode: 'eco'
+        preset_mode: 'eco'
