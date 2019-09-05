@@ -62,8 +62,12 @@ views:
     cards:
       - type: entities
         entities:
-          - entity: light.living_room_lamps
-            name: Living Room Lamps
+          - entity: light.rgbw_bulb_bookcase_right
+            name: Bookcase Lamp (Right)
+          - entity: light.rgbw_bulb_bookcase_left
+            name: Bookcase Lamp (Left)
+          - entity: light.rgbw_bulb_side_table
+            name: Side Table Lamp
           - entity: input_boolean.automate_living_room_lights
 
       - type: entities
@@ -207,6 +211,7 @@ views:
           - entity: sensor.memory_free
           - entity: sensor.last_boot
           - entity: sensor.ssl_certificate_expiry
+          - entity: binary_sensor.updater
       - type: entities
         title: Batteries
         show_header_toggle: false
@@ -302,7 +307,3 @@ views:
         show_header_toggle: false
         entities:
           - group.all_automations
-
-
-
-
