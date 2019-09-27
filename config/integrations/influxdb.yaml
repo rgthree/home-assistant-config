@@ -18,11 +18,38 @@ influxdb:
   default_measurement: state
   include:
     entities:
+      # Living Climate
       - sensor.master_bedroom_thermostat_humidity
       - sensor.master_bedroom_thermostat_temperature
+
+      # Basement Climate
       - sensor.basement_thermostat_temperature
       - sensor.basement_thermostat_humidity
+
+      - sensor.xiaomi_sensor_temp_basement_temperature
+      - sensor.xiaomi_sensor_temp_basement_humidity
+
+      - sensor.airthings_temperature
+      - sensor.airthings_humidity
+      - sensor.airthings_radon_day
+      - sensor.airthings_radon_lifetime
+
+      - sensor.xiaomi_sensor_temp_sump_temperature
+      - sensor.xiaomi_sensor_temp_sump_humidity
+
+      - switch.sump_fan
+      - switch.dehumidifier
+
+      - sensor.basement_average_humidity
+
+      - sensor.homelab_power
+      - sensor.homelab_energy_yesterday
+      - sensor.dehumidifier_power
+      - sensor.dehumidifier_energy_yesterday
+
+      # Speedtest
       - sensor.speedtest_download
+      - sensor.speedtest_upload
       - sensor.redfin_estimate
       - sensor.zestimate
   component_config_glob:

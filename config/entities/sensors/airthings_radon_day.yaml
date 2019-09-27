@@ -1,0 +1,11 @@
+---
+# Converts the Airthings Wave reader from Becquerels per cubic meter (Bq/m3)
+# to Picocuries per liter of air, or pCi/L.
+#
+# https://www.home-assistant.io/components/template/
+#
+platform: template
+sensors:
+  airthings_radon_day:
+    value_template: "{% if states('sensor.airthings_radon_day_bqm3') != 'unknown' -%}{{ (states('sensor.airthings_radon_day_bqm3') | float / 37) |round(2) }}{%- else -%}unknown{%- endif -%}"
+    unit_of_measurement: "pCi/L"

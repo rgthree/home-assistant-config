@@ -1,0 +1,10 @@
+---
+# Reads Airthings Wave via a separate docker on the pi zero from
+# https://github.com/renemarc/balena-airthingswave and reads from mqtt.
+#
+# https://www.home-assistant.io/components/sensor.mqtt/
+#
+platform: mqtt
+name: "airthings_humidity"
+state_topic: "radon/basement/Humidity"
+unit_of_measurement: "%"

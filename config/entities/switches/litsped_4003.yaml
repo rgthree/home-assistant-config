@@ -3,10 +3,9 @@
 # https://github.com/arendst/Sonoff-Tasmota/wiki/MQTT-Overview
 #
 platform: mqtt
-name: litsped-4004
-state_topic: "stat/litsped-4004/POWER"
-command_topic: "cmnd/litsped-4004/POWER"
-availability_topic: "tele/litsped-4004/LWT"
+name: litsped_4003
+state_topic: "stat/litsped-4003/POWER"
+command_topic: "cmnd/litsped-4003/POWER"
+availability_topic: "tele/litsped-4003/LWT"
 payload_available: "Online"
 payload_not_available: "Offline"
-

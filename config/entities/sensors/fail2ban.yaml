@@ -1,0 +1,10 @@
+---
+# Adds fail2ban integration. The log files is what is loaded from the
+# docker-compose as a read-only volume from the f2b container.
+#
+# https://www.home-assistant.io/components/fail2ban/
+#
+
+platform: fail2ban
+file_path: /var/log/fail2ban.log
+jails: !secret fail2ban_jails_list

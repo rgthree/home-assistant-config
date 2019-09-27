@@ -1,0 +1,16 @@
+---
+# This wraps one of the switches with this named dehumidifer allowing me to swap
+# outlets or plugs from just here.
+#
+platform: template
+switches:
+  dehumidifier:
+    value_template: "{{ is_state('switch.kmc4_30608_1002_01', 'on') }}"
+    turn_on:
+      service: switch.turn_on
+      data:
+        entity_id: switch.kmc4_30608_1002_01
+    turn_off:
+      service: switch.turn_off
+      data:
+        entity_id: switch.kmc4_30608_1002_01

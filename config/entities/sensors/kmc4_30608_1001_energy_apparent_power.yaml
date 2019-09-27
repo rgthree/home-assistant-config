@@ -1,0 +1,11 @@
+---
+# https://www.home-assistant.io/components/sensor.mqtt/
+#
+platform: mqtt
+name: kmc4_30608_1001_energy_apparent_power
+state_topic: "tele/kmc4-30608-1001/SENSOR"
+value_template: "{{ value_json['ENERGY']['ApparentPower'] }}"
+unit_of_measurement: "VA"
+availability_topic: "tele/kmc4-30608-1001/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"

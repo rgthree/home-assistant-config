@@ -1,0 +1,13 @@
+---
+# Reads Airthings Wave via a separate docker on the pi zero from
+# https://github.com/renemarc/balena-airthingswave and reads from mqtt.
+#
+# Note, this is in Becquerels per cubic meter (Bq/m3) whereas the U.S. uses
+# generally uses Picocuries per liter of air, or pCi/L.
+#
+# https://www.home-assistant.io/components/sensor.mqtt/
+#
+platform: mqtt
+name: "airthings_radon_day_bqm3"
+state_topic: "radon/basement/Radon-Day"
+unit_of_measurement: "Bq/m3"

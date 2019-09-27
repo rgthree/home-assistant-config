@@ -1,0 +1,27 @@
+---
+# Averages the three humidity meters into one value.
+#
+# https://www.home-assistant.io/components/template/
+#
+platform: template
+sensors:
+  basement_average_humidity:
+    unit_of_measurement: "%"
+    value_template: >-
+      {%- set ns = namespace(found=false) -%}
+      {%-
+        set a = [
+          states('sensor.basement_thermostat_humidity'),
+          states('sensor.xiaomi_sensor_temp_basement_humidity'),
+          states('sensor.airthings_humidity'),
+        ]
+      -%}
+      {%- set ns.total = 0 -%}
+      {%- set ns.num = 0 -%}
+      {%- for ent in a -%}
+        {%- if ent != 'unknown' -%}
+          {%- set ns.total = (ns.total | float) + (ent | float) -%}
+          {%- set ns.num = ns.num + 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {{ (ns.total / ns.num) | round(2) }}

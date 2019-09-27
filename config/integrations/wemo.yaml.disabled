@@ -1,0 +1,9 @@
+---
+#
+# This handles the loading of my wemo devices
+#
+# https://www.home-assistant.io/components/wemo/
+#
+wemo:
+  discovery: false
+  static: !secret wemo_ip_list

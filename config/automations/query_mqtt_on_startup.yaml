@@ -7,3 +7,6 @@ action:
   - service: mqtt.publish
     data:
       topic: "cmnd/sonoffs/POWER"
+      topic: "cmnd/sonoffs/POWER1"
+      topic: "cmnd/sonoffs/POWER2"
+      topic: "cmnd/sonoffs/POWER3"

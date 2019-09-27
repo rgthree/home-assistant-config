@@ -1,0 +1,5 @@
+
+platform: ping
+name: basement_tv
+host: !secret samsung_tv_basement
+scan_interval: 30

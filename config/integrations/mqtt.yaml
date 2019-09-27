@@ -1,7 +1,8 @@
-
+---
 # https://www.home-assistant.io/docs/mqtt/broker#port
 
 mqtt:
   broker: !secret mqtt_broker
+  port: 1883
   username: !secret mqtt_username
   password: !secret mqtt_password

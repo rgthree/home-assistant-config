@@ -5,7 +5,7 @@
 # Currently mapped to light.basement_reading_lamp in ../lights
 #
 platform: mqtt
-name: iselector-3004
+name: iselector_3004
 state_topic: "stat/iselector-3004/POWER"
 command_topic: "cmnd/iselector-3004/POWER"
 availability_topic: "tele/iselector-3004/LWT"

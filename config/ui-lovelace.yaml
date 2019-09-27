@@ -135,10 +135,45 @@ views:
       - type: entities
         entities:
           - entity: light.basement_table_lamp
+            name: Bar Table Lamp
           - entity: light.basement_reading_lamp
+            name: IKEA Reading Lamp
           - entity: light.basement_tv_led_strip
+            name: TV LED Strip
+          - type: divider
+            style:
+              height: 1px
+              width: 80%
+              margin-left: auto
+              margin-right: auto
+              background: '#aaaaaa'
           - entity: binary_sensor.wyzesense_basement_door
           - entity: binary_sensor.wyzesense_basement_bar_motion
+          - type: divider
+            style:
+              height: 1px
+              width: 80%
+              margin-left: auto
+              margin-right: auto
+              background: '#aaaaaa'
+          - entity: light.basement_stairs_led_strip
+            name: Stairs LED Strip
+          - entity: switch.dehumidifier
+            name: Dehumidifier
+          - entity: input_boolean.automate_dehumidifier
+          - entity: switch.sump_fan
+            name: Sump Fan
+          - type: divider
+            style:
+              height: 1px
+              width: 80%
+              margin-left: auto
+              margin-right: auto
+              background: '#aaaaaa'
+          - entity: sensor.xiaomi_sensor_temp_sump_humidity
+            name: Sump Humidity
+          - entity: binary_sensor.xiaomi_sensor_water_bsmt_01
+          - entity: binary_sensor.xiaomi_sensor_water_bsmt_02
 
       - type: entities
         title: State
@@ -218,6 +253,14 @@ views:
         entities:
           - entity: sensor.battery_basement_door
           - entity: sensor.battery_basement_bar_motion
+          - entity: sensor.xiaomi_sensor_temp_sump_battery
+            name: Xiaomi Temp - Sump (CR2032)
+          - entity: sensor.xiaomi_sensor_temp_basement_battery
+            name: Xiaomi Temp - Basement (CR2032)
+          - entity: sensor.xiaomi_sensor_water_bsmt_01_battery
+            name: Xiaomi Water - 01 (CR2032)
+          - entity: sensor.xiaomi_sensor_water_bsmt_02_battery
+            name: Xiaomi Water - 02 (CR2032)
       - type: entities
         title: Network
         show_header_toggle: false

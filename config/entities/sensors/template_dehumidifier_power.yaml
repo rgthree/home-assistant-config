@@ -1,0 +1,9 @@
+---
+#
+# https://www.home-assistant.io/components/template/
+#
+platform: template
+sensors:
+  dehumidifier_power:
+    value_template: "{{ states('sensor.kmc4_30608_1002_energy_power') }}"
+    unit_of_measurement: 'W'

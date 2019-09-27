@@ -1,0 +1,16 @@
+---
+# This wraps one of the switches with this named sump fan allowing me to swap
+# outlets or plugs from just here.
+#
+platform: template
+switches:
+  sump_fan:
+    value_template: "{{ is_state('switch.sylvania_0001', 'on') }}"
+    turn_on:
+      service: switch.turn_on
+      data:
+        entity_id: switch.sylvania_0001
+    turn_off:
+      service: switch.turn_off
+      data:
+        entity_id: switch.sylvania_0001

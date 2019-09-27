@@ -1,0 +1,6 @@
+---
+# Automate dehumidifier?
+#
+automate_dehumidifier:
+  name: Automate Dehumidifier
+  initial: on
