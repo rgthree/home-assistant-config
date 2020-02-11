@@ -1,0 +1,24 @@
+---
+# Formats the recollect_waste sensor for a relative date display.
+#
+# https://www.home-assistant.io/components/template/
+#
+platform: template
+sensors:
+  recollect_waste_pretty:
+    value_template: >
+      {% set waste_as_time = strptime(states('sensor.recollect_waste'), "%Y-%m-%d") %}
+      {% set waste_as_day_timestamp = as_timestamp(waste_as_time) / 86400 %}
+      {% set today_as_day_timestamp = as_timestamp(as_timestamp(now()) | timestamp_custom("%Y-%m-%d 00:00:00",true)) / 86400 %}
+      {% set days_diff = waste_as_day_timestamp - today_as_day_timestamp %}
+      {% if days_diff == 0.0 %}
+        Today
+      {% elif days_diff == 1.0 %}
+        Tomorrow!
+      {% elif days_diff >= 7.0 %}
+        In {{ days_diff | int }} days
+      {% elif days_diff >= 2.0 %}
+        {{ waste_as_time.strftime("%A") }}
+      {% else %}
+        Error.
+      {% endif %}

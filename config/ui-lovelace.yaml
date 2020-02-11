@@ -28,6 +28,9 @@ views:
         entities:
           - entity: sun.sun
             secondary_info: next_dawn
+          - entity: sensor.recollect_waste_pretty
+            name: Trash Pickup
+            icon: mdi:trash-can-outline
           - entity: sensor.zestimate
             name: Z-Range
             icon: mdi:resistor
@@ -80,6 +83,7 @@ views:
           - entity: input_boolean.automate_living_room_lights
             icon: mdi:lightbulb-on-outline
           - entity: script.brighten_living_room_lights
+            name: Brighten Living Room Lights
             icon: mdi:lightbulb-on-outline
 
           - type: divider
