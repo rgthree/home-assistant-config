@@ -9,7 +9,9 @@
 #  6. Add back the "[test] Home" app like in #3 (might have wait/back out/refresh)
 google_assistant:
   project_id: !secret google_assistant_project_id
-  api_key: !secret google_assistant_api_key
+  service_account:
+    private_key: !secret google_assistant_service_account_private_key
+    client_email: !secret google_assistant_service_account_client_email
   expose_by_default: false
   entity_config:
     script.goodnight:
