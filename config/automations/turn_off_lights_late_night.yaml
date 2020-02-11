@@ -1,9 +1,12 @@
 # Turn off most lights except one bookcase lamp.
+# Also turns on automation for these lamps for the next day.
+#
 alias: Turn off lights late night
 trigger:
   - platform: time
     at: "00:15:00"
 action:
+  - service: script.turn_on_automate_living_room_lights
   - service: light.turn_off
     entity_id: light.christmas
   - service: light.turn_off

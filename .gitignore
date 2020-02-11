@@ -1,5 +1,6 @@
 # Ignore everything in our config
 config/**
+.vscode
 
 # Except our whitelisted files.
 !config/configuration.yaml
