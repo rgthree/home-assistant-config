@@ -68,14 +68,31 @@ views:
             name: Bookcase Lamp (Left)
           - entity: light.rgbw_bulb_side_table
             name: Side Table Lamp
-          - entity: input_boolean.automate_living_room_lights
 
-      - type: entities
-        title: Scripts
-        show_header_toggle: false
-        entities:
-          - entity: script.living_room_lamps_random_color
-            name: Random Colors on Lamps
+          - type: divider
+            style:
+              height: 1px
+              width: 80%
+              margin-left: auto
+              margin-right: auto
+              background: '#aaaaaa'
+
+          - entity: input_boolean.automate_living_room_lights
+            icon: mdi:lightbulb-on-outline
+          - entity: script.brighten_living_room_lights
+            icon: mdi:lightbulb-on-outline
+
+          - type: divider
+            style:
+              height: 1px
+              width: 80%
+              margin-left: auto
+              margin-right: auto
+              background: '#aaaaaa'
+
+          - entity: light.side_table_trees
+            name: Side Table Trees
+            icon: mdi:ornament
 
       - type: vertical-stack
         cards:
@@ -173,7 +190,11 @@ views:
           - entity: sensor.xiaomi_sensor_temp_sump_humidity
             name: Sump Humidity
           - entity: binary_sensor.xiaomi_sensor_water_bsmt_01
+            name: Xiaomi Water - 01
           - entity: binary_sensor.xiaomi_sensor_water_bsmt_02
+            name: Xiaomi Water - 02
+          - entity: binary_sensor.xiaomi_sensor_water_sump
+            name: Xiaomi Water - Sump
 
       - type: entities
         title: State
@@ -261,6 +282,8 @@ views:
             name: Xiaomi Water - 01 (CR2032)
           - entity: sensor.xiaomi_sensor_water_bsmt_02_battery
             name: Xiaomi Water - 02 (CR2032)
+          - entity: sensor.xiaomi_sensor_water_sump_battery
+            name: Xiaomi Water - Sump (CR2032)
       - type: entities
         title: Network
         show_header_toggle: false

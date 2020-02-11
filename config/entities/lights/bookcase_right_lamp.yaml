@@ -1,0 +1,5 @@
+
+platform: group
+name: bookcase_right_lamp
+entities:
+  - light.rgbw_bulb_bookcase_right # was light.osram_lightify_a19_rgbw_00a40f0a_3

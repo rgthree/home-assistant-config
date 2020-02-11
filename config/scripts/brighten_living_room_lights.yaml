@@ -1,7 +1,10 @@
-
-living_room_lights_full_brightness:
-  alias: Living Room Lights Full Brightness
+---
+# Brightens the living room lights and keeps them there flipping the automate
+# lights input boolean off.
+#
+brighten_living_room_lights:
   sequence:
+    - service: script.turn_off_automate_living_room_lights
     - service: light.turn_on
       data_template:
         entity_id: light.living_room_lamps

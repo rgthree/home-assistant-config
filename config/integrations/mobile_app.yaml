@@ -1,0 +1,8 @@
+---
+# Starting with ios 2019.1, it should be moved to mobile_app.
+#
+# https://www.home-assistant.io/components/ios/
+# https://companion.home-assistant.io/
+# https://companion.home-assistant.io/en/getting_started/migration.html
+#
+mobile_app:

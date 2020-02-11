@@ -4,9 +4,12 @@
 goodnight:
   alias: Goodnight
   sequence:
-    - service: light.turn_off
+    - service: homeassistant.turn_off
       data:
         entity_id: light.living_room_lamps
+    - service: homeassistant.turn_off
+      data:
+        entity_id: light.christmas
     # Only do basement if there aren't guests down there.
     - condition: state
       entity_id: input_boolean.guests_basement

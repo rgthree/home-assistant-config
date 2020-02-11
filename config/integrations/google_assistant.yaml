@@ -13,10 +13,9 @@ google_assistant:
   expose_by_default: false
   entity_config:
     script.goodnight:
+      name: Goodnight
       expose: true
-    light.living_room_lamps:
-      expose: true
-      room: Living Room
+
     light.basement_table_lamp:
       expose: true
       room: Basement
@@ -26,3 +25,42 @@ google_assistant:
     light.basement_reading_lamp:
       expose: true
       room: Basement
+
+    light.living_room_lamps:
+      expose: true
+      room: Living Room
+    light.bookcase_left_lamp:
+      name: Bookcase Left Lamp
+      expose: true
+      room: Living Room
+      aliases:
+        - Bookcase Left Lamp
+        - bookcase left
+        - bookcase left light
+        - left bookcase lamp
+        - left bookcase light
+        - left bookcase
+    light.bookcase_right_lamp:
+      name: Bookcase Right Lamp
+      expose: true
+      room: Living Room
+      aliases:
+        - Bookcase Right Lamp
+        - bookcase right
+        - bookcase right light
+        - right bookcase lamp
+        - right bookcase light
+        - right bookcase
+    light.side_table_lamp:
+      name: Side Table Lamp
+      expose: true
+      room: Living Room
+      aliases:
+        - Side Table Lamp
+        - side table light
+        - side table
+
+    light.side_table_trees:
+      name: Side Table Trees
+      expose: true
+      room: Living Room

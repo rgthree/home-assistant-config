@@ -1,0 +1,6 @@
+
+platform: group
+name: christmas_window_lights_front
+entities:
+  - light.christmas_window_lights_front_left
+  - light.christmas_window_lights_front_right

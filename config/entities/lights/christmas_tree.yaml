@@ -1,0 +1,4 @@
+
+platform: switch
+name: christmas_tree
+entity_id: switch.litsped_4003

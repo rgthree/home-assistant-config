@@ -1,0 +1,12 @@
+# Turn off most lights except one bookcase lamp.
+alias: Turn off lights late night
+trigger:
+  - platform: time
+    at: "00:15:00"
+action:
+  - service: light.turn_off
+    entity_id: light.christmas
+  - service: light.turn_off
+    entity_id: light.bookcase_left_lamp
+  - service: light.turn_off
+    entity_id: light.side_table_lamp

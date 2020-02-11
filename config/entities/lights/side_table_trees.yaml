@@ -1,0 +1,4 @@
+
+platform: switch
+name: side_table_trees
+entity_id: switch.iselector_3001

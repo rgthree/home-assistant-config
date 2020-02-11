@@ -1,0 +1,4 @@
+
+platform: switch
+name: christmas_window_lights_front_right
+entity_id: switch.iselector_3003

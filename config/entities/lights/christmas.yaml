@@ -1,0 +1,7 @@
+
+platform: group
+name: christmas
+entities:
+  - light.christmas_tree
+  - light.christmas_side_table
+  - light.christmas_window_lights

@@ -1,0 +1,5 @@
+
+platform: group
+name: side_table_lamp
+entities:
+  - light.rgbw_bulb_side_table # was light.osram_lightify_a19_rgbw_00a3f878_3

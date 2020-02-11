@@ -1,0 +1,4 @@
+
+platform: switch
+name: christmas_window_lights_front_left
+entity_id: switch.litsped_4002
