@@ -362,6 +362,10 @@ views:
               margin-left: auto
               margin-right: auto
               background: '#aaaaaa'
+
+          - entity: binary_sensor.internet
+            secondary_info: last-changed
+
           - entity: script.cycle_modem
             icon: mdi:restart
             secondary_info: last-changed

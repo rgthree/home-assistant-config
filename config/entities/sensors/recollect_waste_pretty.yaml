@@ -7,10 +7,11 @@ platform: template
 sensors:
   recollect_waste_pretty:
     value_template: >
+      {% set today_day_as_time = strptime(states('sensor.date'), "%Y-%m-%d") %}
       {% set waste_as_time = strptime(states('sensor.recollect_waste'), "%Y-%m-%d") %}
       {% set waste_as_day_timestamp = as_timestamp(waste_as_time) / 86400 %}
-      {% set today_as_day_timestamp = as_timestamp(as_timestamp(now()) | timestamp_custom("%Y-%m-%d 00:00:00",true)) / 86400 %}
-      {% set days_diff = waste_as_day_timestamp - today_as_day_timestamp %}
+      {% set today_day_as_timestamp = as_timestamp(today_day_as_time) / 86400 %}
+      {% set days_diff = waste_as_day_timestamp - today_day_as_timestamp %}
       {% if days_diff == 0.0 %}
         Today
       {% elif days_diff == 1.0 %}
